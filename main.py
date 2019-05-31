@@ -24,7 +24,7 @@ for commit in github_event_json["commits"]:
     changed_files.extend(commit["modified"])
     changed_files.extend(commit["removed"])
 
-print("Changed Files: " + changed_files)
+print_files(changed_files)
 # find if any of the changes match the pattern.
 does_match = False
 for pattern in sys.argv:
@@ -43,3 +43,9 @@ if does_match:
 else:
     print("No Matches Found... Skipping Workflow...")
     exit(78)
+
+
+def print_files(file_list):
+    print("Files are:\n")
+    for f in file_list:
+        print(f)
