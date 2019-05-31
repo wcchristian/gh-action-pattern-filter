@@ -2,7 +2,7 @@
 FROM python:3.7-slim
 
 LABEL "com.github.actions.name"="Github Pattern Filter"
-LABEL "com.github.actions.description"="Checks added, modified, and removed files on the github push event for a specific regex, if found, this action exits normally and workflow continues. If not found, this action exits Neutral and rest of workflow is skipped."
+LABEL "com.github.actions.description"="Checks added, modified, and removed files on the github push event for a specific regex"
 LABEL "com.github.actions.icon"="filter"
 LABEL "com.github.actions.color"="black"
 
