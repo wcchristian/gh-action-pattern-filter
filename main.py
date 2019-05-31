@@ -38,4 +38,4 @@ for pattern in sys.argv:
 if does_match:
     exit(0)
 else:
-    exit(1)
+    exit(78)
