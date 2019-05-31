@@ -24,6 +24,7 @@ for commit in github_event_json["commits"]:
     changed_files.extend(commit["modified"])
     changed_files.extend(commit["removed"])
 
+print("Changed Files: " + changed_files)
 # find if any of the changes match the pattern.
 does_match = False
 for pattern in sys.argv:
@@ -32,10 +33,13 @@ for pattern in sys.argv:
 
     for fname in changed_files:
         if re.match(pattern, fname):
+            print("Matched On: " + fname + " with pattern: " + pattern)
             does_match = True
             break
 
 if does_match:
+    print("Matches Found... Continuing...")
     exit(0)
 else:
+    print("No Matches Found... Skipping Workflow...")
     exit(78)
